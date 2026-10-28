@@ -1106,6 +1106,11 @@ textarea {
   transform: scale(1.05);
 }
 
+.project-card:hover .kplab-mockup .mac-browser {
+  transform: scale(1.03);
+  transition: transform var(--transition-base);
+}
+
 .project-body {
   padding: 24px 28px 28px;
 }
@@ -1607,6 +1612,217 @@ textarea {
   background: rgba(255,255,255,0.15);
   border-radius: 2px;
 }
+
+/* ============================================
+   macOS BROWSER MOCKUP (Reusable Component)
+   ============================================ */
+.mac-browser {
+  width: 100%;
+  height: 100%;
+  background: #e8e8e3;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid #cfcfc9;
+}
+
+.mac-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f0f0eb;
+  border-bottom: 1px solid #d8d8d2;
+}
+
+.mac-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.mac-dots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: block;
+}
+
+.mac-dots span.red { background: #ff5f56; box-shadow: inset 0 0 0 1px #d43f3a; }
+.mac-dots span.yellow { background: #ffbd2e; box-shadow: inset 0 0 0 1px #c4951a; }
+.mac-dots span.green { background: #27ca3f; box-shadow: inset 0 0 0 1px #1e8a2a; }
+
+.mac-address-bar {
+  flex: 1;
+  height: 22px;
+  background: #fff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.55rem;
+  color: #9a9a93;
+  letter-spacing: 0.3px;
+  border: 1px solid #d8d8d2;
+  padding: 0 10px;
+}
+
+.mac-address-bar .mac-url-icon {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #e0e0da;
+  flex-shrink: 0;
+}
+
+.mac-content {
+  flex: 1;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+}
+
+/* KPLab preview content */
+.kplab-preview {
+  background: #fff;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #ecece8;
+}
+
+.kplab-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kplab-logo {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.kplab-title {
+  height: 7px;
+  width: 55%;
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+
+.kplab-sub {
+  height: 4px;
+  width: 35%;
+  background: #b0b0aa;
+  border-radius: 2px;
+}
+
+.kplab-timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.kplab-timer-label {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.kplab-timer-value {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #78350f;
+  font-family: var(--font-mono);
+}
+
+.kplab-question {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kplab-question-text {
+  height: 8px;
+  width: 30%;
+  background: #374151;
+  border-radius: 3px;
+}
+
+.kplab-question-input {
+  width: 34px;
+  height: 22px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+.kplab-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.kplab-btn {
+  flex: 1;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.kplab-btn.primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.kplab-btn.ghost {
+  background: #e5e7eb;
+}
+
+.kplab-stats {
+  display: flex;
+  gap: 6px;
+}
+
+.kplab-stat {
+  flex: 1;
+  background: #f3f4f6;
+  border-radius: 4px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.kplab-stat-value {
+  height: 10px;
+  width: 50%;
+  border-radius: 3px;
+}
+
+.kplab-stat:nth-child(1) .kplab-stat-value { background: #6366f1; }
+.kplab-stat:nth-child(2) .kplab-stat-value { background: #22c55e; }
+.kplab-stat:nth-child(3) .kplab-stat-value { background: #f59e0b; }
 
 /* ============================================
    CERTIFICATES SECTION
